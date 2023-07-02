@@ -14,11 +14,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class Board {
-	private int bNo;
-	private String bWriter;
-	private String bTag;
-	private String bTitle;
-	private String bContent;
-	private Date bCreate;
-	private int bCount;
+	private int bNo;  //게시글번호
+	private String bWriter; // 회원id
+	private String bTag; // 게시글 구분 
+	private String bTitle;  //제목
+	private String bContent; //내용
+	private Date bCreate; /* 디폴트 */
+	private int bCount;    /*디폴트 */
 }
