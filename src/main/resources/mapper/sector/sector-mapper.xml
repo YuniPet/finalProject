@@ -3,6 +3,19 @@
   PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-<mapper namespace="com.ks.finalProject.sector.model.dao.SectorDao">
+<mapper namespace="com.kh.finalProject.sector.model.dao.SectorDao">
+<resultMap type="sector" id="sectorMap"></resultMap>
+
+	<select id="getSectors" resultMap="sectorMap">
+		select *
+		from sector
+	</select>
+
+	<select id="radioRez" resultMap="sectorMap">
+		select *
+		from sector
+		where SECTOR_NO = #{radio}
+	</select>
+
 
 </mapper>

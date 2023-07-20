@@ -1,0 +1,272 @@
+button:hover{
+	font-weight: bold;
+}
+button{
+	cursor:pointer;
+}
+.cartList-main{
+	font-family: 'Noto Sans KR', 산세리프;
+	width:1200px;
+	text-align:center;
+	margin: 0 auto;
+}	
+
+.cart-container {
+	display: inline-block;
+	width: 1050px;
+	position: relative;
+
+}
+/*아이템 메인페이지 로고*/
+.cart-logo {
+    display: flex;
+    width: 90%;
+    margin: 40px auto;
+    border-radius: 8px;
+    background: #fafafa;
+    align-items: center;
+    padding: 30px 10px 30px 30px;
+    position: relative;
+}
+
+.cart-logo-text span {
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  margin: 5px;
+  font-size: 20px;
+}
+.cart-logo-text{
+ 	display: flex;
+  	align-items: center;
+  	justify-content: flex-start; 	
+}
+/*장바구니 테이블*/
+.cart-table-box{
+	width: 700px;
+	display: inline-block;
+}
+.cart-table {
+	position: sticky;
+	border-collapse: collapse;
+	width: 100%;
+	display: inline-block;
+}
+
+.cart-table td {
+	border-top: 2px solid #eee;
+	border-bottom: 2px solid #eee;
+	padding: 8px;
+	position: relative;
+}
+#selectAllBtn {
+	color : rgb(119, 119, 119);
+	margin-left: 20px; 
+	font-size: 13px;
+	cursor:pointer;
+}
+#selectAllBtn:hover{
+	font-weight: bold; 
+}
+.cart-table tr:first-child {
+	padding: 20px;
+}
+.cart-table td:first-child {
+	width: 10px;
+}
+.cart-table td:nth-child(2) {
+	width: 100px;
+	border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.cart-table td:nth-child(2)>a>img {
+	object-fit: cover;
+	width: 100px;
+	height: 100px;
+}
+
+/* 두 번째 td에 스타일 적용 */
+.cart-table td:nth-child(3) {
+	width: 250px;
+}
+
+/* 세 번째 td에 스타일 적용 */
+.cart-table td:nth-child(4) {
+	width: 150px;
+	border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+/* 마지막 td에 스타일 적용 */
+.cart-table td:last-child {
+	width: 170px;
+}
+.no-border {
+	border: 0
+}
+
+.count-td *{
+	align-items: center;
+	text-align: center;
+} 
+.quantity-control {
+	margin: 5px auto;
+	border:  1px solid #ccc;
+	width: 98.4px;
+}
+.quantity-control *{
+	 display: flex;
+    align-items: center;
+	text-align: center;
+	color: rgb(119, 119, 119); 
+}
+
+.decrement-btn{
+	display: inline-block;
+    width: 30px;
+    height: 30px;
+     border-top: 0;
+	  border-right: 1px solid #ccc;
+	  border-bottom: 0;
+	  border-left: 0;
+    font-size: 15px;
+    background-color: white;
+}
+
+.increment-btn{
+	display: inline-block;
+    width: 30px;
+    height: 30px;
+    padding-top: 1px;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 0;
+	border-left: 1px solid #ccc;
+    font-size: 15px;
+    background-color: white;
+   	color: rgb(119, 119, 119); 
+}
+
+.quantity-input{	
+	text-align:right;
+	display: inline-block;
+    width: 40px;
+    margin-left :-5px;
+    margin-right :-5px;
+    padding-top: 1px;
+    height: 30px;
+    font-size: 15px;
+    border:0;
+    background-color: transparent;
+}
+
+.CountUpDate-btn{
+	display: inline-block;
+    width: 50px;
+    padding-top: 1px;
+    height: 25px;
+    border: 1px solid #ccc;
+    font-size: 10px;
+    background-color: transparent;
+  	color: rgb(119, 119, 119); 
+}
+.buy-button{
+	display: block;
+    width: 100%;
+    padding-top: 1px;
+    height: 34px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+.remove-button{
+	display: block;
+    width: 100%;
+    padding-top: 1px;
+    height: 34px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    background-color: #ff3e3e;
+    border-color: #ff3e3e;
+    color: #fff;
+}
+
+/* padding 없애기 */
+	td.no-padding {
+  		padding: 0;
+	}
+.all-remove-button{
+	margin : auto;
+	display: block;
+    width: 100%;
+    height: 34px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+}
+.cart-bar-box {
+	float: right;
+	position: sticky;
+	top: 0;
+	margin-top: 0;
+	width: 300px;
+	display: inline-block;
+	justify-content: flex-start;
+	margin-bottom: auto;
+}
+.cart-bar {
+	border: 1px solid #ccc;
+	width: 100%;
+	font-size: 13px;
+	padding: 10px;
+
+}
+.cart-bar td{
+	height: 20px;
+	}
+/* 밑줄 */
+.underline {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+.cart-bar tr:nth-child(2) { 
+    border-top: 1px solid #ccc;
+	
+	}
+.cart-bar  td:nth-child(2) { 
+	text-align: right;
+
+	}
+.cart-bar  td:nth-child(3) { 
+	text-align: right;
+	}
+
+.red-text {
+    color: red;
+}
+
+.all-cart-buy-btn {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    height: 70px;
+    border: 1px solid #ccc;
+    font-size: 25px;
+    background-color: #ff3e3e;
+    border-color: #ff3e3e;
+    color: #fff;
+}
+
+/*상품 합계 */
+.sumitemMoney {
+	background-color :#f9f9f9;
+	 height: 40px;
+	 font-size: 14px;
+}
+
+.sumMoney {
+	text-align:center;
+	background-color: f9f9f9;
+	height: 100px;
+}

@@ -24,6 +24,38 @@
 	<!-- base-package하위의 @Component클래스를 servlet-context에 빈으로 등록해서 관리 -->
 	<context:component-scan base-package="com.kh.finalProject" />
 	
+	<!-- jsonView 빈 등록 -->
+	<beans:bean id="jsonView" class="net.sf.json.spring.web.servlet.view.JsonView">
+		<beans:property name="contentType" value="application/json;charset=UTF-8"/>
+	</beans:bean>
+	
+	<!-- BeanNameViewResolver 빈 등록  -->
+	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<!-- 우선순위를 InternalResourceViewResolver보다 높게 설정 -->
+		<beans:property name="order" value="1"/>
+	</beans:bean>
+	
+	<!-- Interceptor 등록 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/item/**"/>
+			<mapping path="/board/**"/>
+			<mapping path="/farm/**"/>
+			
+
+			<exclude-mapping path="/item/itemlist.bo"/>
+			<exclude-mapping path="/item/paclist.bo"/>
+			
+			<exclude-mapping path="/board/vegFarm.bo"/>
+			<exclude-mapping path="/board/boardList.bo"/>
+			<exclude-mapping path="/board/boardDetail.bo"/>
+			<exclude-mapping path="/board/gongjiList.bo"/>
+			
+			<exclude-mapping path="/farm/indexFarm.do"/>
+
+			<beans:bean class="com.kh.finalProject.common.interceptor.LoginInterceptor" />
+		</interceptor>
+	</interceptors>
 	
 	
 </beans:beans>

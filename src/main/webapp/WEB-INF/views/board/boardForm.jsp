@@ -10,7 +10,7 @@
     }
 
     #container {
-        width: 500px;
+        width: 800px;
         margin: 0 auto;
         background-color: #fff;
         padding: 20px;
@@ -60,6 +60,14 @@
         background-color: #ccc;
         margin-left: 10px;
     }
+    textarea {
+    height: 500px;
+    min-width: 800px;
+    min-height: 150px;
+    max-width: 500px;
+    max-height: 500px;
+    overflow: auto;
+}
 </style>
 
 <jsp:include page="/WEB-INF/views/common/header.jsp">
@@ -69,23 +77,31 @@
 <br><br>
 
 <div id="container">
-    <h2>게시글 작성</h2>
-    <form action="${pageContext.request.contextPath}/board/boardEnroll.bo" method="post" name="enrollfrm" enctype="multipart/form-data">
+	 <h2>${tag} 게시글 작성</h2>
+	
+    <form action="${pageContext.request.contextPath}/board/boardEnroll.bo" method="post" name="enrollfrm" >
         <div class="form-group">
             <label for="boardTitle">제목</label>
             <input type="text" id="boardTitle" name="boardTitle" required>
         </div>
         <div class="form-group">
             <label for="boardWriter">작성자</label>
-            <input type="text" id="boardWriter" name="boardWriter" value="${loginMember.userId}" required>
+           <input type="text" id="boardWriter" name="boardWriter" value="${loginMember.memId}" readonly>
+     	   <input type="hidden" name="boardTag" value="${tag}">
         </div>
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="boardTag">게시글 구분</label>
-            <input type="text" id="boardTag" name="boardTag" readonly>
-        </div>
+            <input type="text" id="boardTag" name="boardTag" required>
+        </div> -->
+        
+        
+        
+         <!--네임은 키와 값으로 들어감    -->
+        
+        
         <div class="form-group">
-            <label for="content">내용</label>
-            <textarea id="content" name="content" rows="10" cols="50" required></textarea>
+            <label for="boardContent">내용</label>
+            <textarea id="boardContent" name="boardContent" rows="10" cols="50" required></textarea>
         </div>
         <div class="btn-group">
             <button type="submit" class="btn">등록</button>
@@ -94,4 +110,5 @@
     </form>
 </div>
 
+<br><br><br><br><br><br>
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />

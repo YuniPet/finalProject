@@ -3,6 +3,77 @@
   PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
-<mapper namespace="com.ks.finalProject.member.model.dao.MemberDao">
+<mapper namespace="com.kh.finalProject.member.model.dao.MemberDao">
+	<resultMap type="member" id="memberMap"></resultMap>
+
+	<insert id="insertMember">
+		insert into member
+			values(
+				#{memId},
+				#{memPwd},
+				#{memName},
+				#{memBirth},
+				default,
+				#{memTel},
+				#{memAddr},
+				#{memEmail},
+				default,
+				to_date('01/01/01','RR/MM/DD'),
+				default
+			)
+	</insert>
+	
+	<select id="selectOneMember" resultMap="memberMap">
+		select *
+		  from member
+		 where MEM_STATUS = 'Y'
+		   and MEM_ID = #{memId}
+	</select>
+	
+	<update id="changePwd" parameterType="map">
+		update member
+		   set MEM_PWD = #{pwd}
+	     where MEM_STATUS = 'Y'
+	       and MEM_ID = #{id}
+	</update>
+	
+	<update id="editMyPage">
+		update member
+		   set MEM_TEL = #{memTel},
+		   	   MEM_ADDR = #{memAddr},
+		   	   MEM_EMAIL = #{memEmail}
+   	     where MEM_STATUS = 'Y'
+   	       and MEM_ID = #{memId}
+	</update>
+	
+	<update id="delMem">
+		update member
+		   set MEM_STATUS = 'N',
+		   	   MEM_DELDATE = SYSDATE
+		 where MEM_ID = #{memId}
+	</update>
+	
+	<!--관리자 mapper-->	
+    <select id="selectMembers" resultMap="memberMap">
+        SELECT * 
+        FROM member
+    </select>
+    
+    <delete id="deleteMember">
+        DELETE 
+        FROM member
+        WHERE MEM_ID = #{memId}
+    </delete>
+    
+    <update id="adminMemberUpdate">
+    update member
+    set MEM_NAME = #{memName},
+        MEM_BIRTH = #{memBirth},
+        MEM_TEL = #{memTel},
+        MEM_ADDR = #{memAddr},
+        MEM_EMAIL = #{memEmail}
+    where MEM_ID = #{memId}
+	</update>
+	<!--관리자 mapper-->
 
 </mapper>
